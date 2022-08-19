@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Banner from "../components/Banner";
-import SubBanner from "../components/SubBanner";
 import Countdown from "../components/Countdown";
 import InfoSection from "../components/InfoSection";
 import Regalos from "../components/Regalos";
@@ -34,11 +33,6 @@ export default function Home() {
         <meta name="theme-color" content="#A78556" />
       </Head>
       <Banner title={"Verónica y Guillermo"} subtitle="Nuestra Boda" />
-      <SubBanner
-        title="¡Estás Invitado!"
-        date="25 Marzo 2023"
-        phrase="Será un honor que seas parte de este momento tan especial."
-      />
       <Countdown />
       <InfoSection />
       <Regalos

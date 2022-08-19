@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import SubBanner from "./SubBanner";
+
 import styled from "styled-components";
 
 const BannerContainer = styled.div`
@@ -33,6 +35,7 @@ const BannerContainer = styled.div`
     font-family: "Corinthia", cursive;
     line-height: 3rem;
     margin: 2rem 1rem;
+    margin-bottom: ${(props) => props.showParents && "4rem"};
   }
 
   @keyframes AnimateBG {
@@ -48,6 +51,32 @@ const BannerContainer = styled.div`
       background: transparent;
     }
   }
+
+  .parents-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+    .parents {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: smaller;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
+    .parents.left {
+      border-right: 1px solid var(--accent-color);
+      width: 50%;
+    }
+    .parents.right {
+      border-left: 1px solid var(--accent-color);
+      width: 50%;
+    }
+  }
+  .parents-title {
+    font-size: small;
+  }
 `;
 
 const Spacer = styled.span`
@@ -57,14 +86,37 @@ const Spacer = styled.span`
 `;
 
 const Banner = (props) => {
+  const [showParentsToggle, setShowParentsToggle] = useState(false);
+
+  const setShowparents = () => {
+    setShowParentsToggle(!showParentsToggle);
+  };
+
   const splitted = props.title.split(" ");
   const groom = splitted[0];
   const bride = splitted[2];
 
   return (
-    <BannerContainer>
+    <BannerContainer showParents={showParentsToggle}>
       <div className="banner-content">
         <p className="banner-subtitle">{props.subtitle}</p>
+        {showParentsToggle && (
+          <>
+            <h3 className="parents-title">
+              Con la bendición de nuestros papás
+            </h3>
+            <div className="parents-section">
+              <div className="parents left">
+                <span>Soledad Fierro Quiñonez</span>
+                <span>Mónico Soto Escobar</span>
+              </div>
+              <div className="parents right">
+                <span>Eulalia García Eguiarte</span>
+                <span>Guillermo López Tsubuku</span>
+              </div>
+            </div>
+          </>
+        )}
         <h1 className="banner-title">
           {groom}
           <Spacer height="0vh" />
@@ -72,10 +124,13 @@ const Banner = (props) => {
           <Spacer height="8vh" />
           {bride}
         </h1>
-        {/* <div className="image-container" >
-          <Image className="ring-behind" src={ringImg} />
-        </div> */}
       </div>
+      <SubBanner
+        title="¡Estás Invitado!"
+        date="25 Marzo 2023"
+        phrase="Será un honor que seas parte de este momento tan especial."
+        showParents={setShowparents}
+      />
     </BannerContainer>
   );
 };

@@ -37,7 +37,7 @@ const Circle = styled.span`
 const SubBanner = (props) => {
   return (
     <SubBannerContainer className="glass">
-      <Circle />
+      <Circle onClick={(e) => props.showParents()} />
       <h2>{props.title}</h2>
       <span>{props.date}</span>
       <p>{props.phrase}</p>
