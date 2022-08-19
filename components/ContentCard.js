@@ -53,7 +53,7 @@ const ContentCard = (props) => {
       <span>{props.time}</span>
       <div className="link-container">
         <span className="ubication-link">
-          <a href={props.link} target="_blank">
+          <a href={props.link} target="_blank" rel="noreferrer">
             Ubicación
           </a>
         </span>

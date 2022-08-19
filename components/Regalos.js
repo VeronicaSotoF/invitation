@@ -45,8 +45,8 @@ const Regalos = (props) => {
       <h2 className="regalos-title">{props.title}</h2>
       <p>{props.phrase}</p>
       <button className="btn-liverpool shadow">
-        <div class="button-content">
-          <a href={props.url} target="_blank">
+        <div className="button-content">
+          <a href={props.url} target="_blank" rel="noreferrer">
             Mesa de Regalos
           </a>
           <div className="external">
