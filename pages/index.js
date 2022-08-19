@@ -33,7 +33,7 @@ export default function Home() {
         />
         <meta name="theme-color" content="#A78556" />
       </Head>
-      <Banner title={"Guillermo y Verónica"} subtitle="Nuestra Boda" />
+      <Banner title={"Verónica y Guillermo"} subtitle="Nuestra Boda" />
       <SubBanner
         title="¡Estás Invitado!"
         date="25 Marzo 2023"

@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <h3 className="title">Te esperamos</h3>
-      <h4>Guillermo y Verónica</h4>
+      <h4>Verónica y Guillermo</h4>
     </FooterContainer>
   );
 };
