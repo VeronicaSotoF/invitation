@@ -12,7 +12,7 @@ const CountdownContainer = styled.div`
     border-radius: 50%;
     background-color: var(--accent-color);
     padding: 1rem;
-    margin: 0rem 1rem;
+    margin: 0.5rem 1rem;
     width: 2rem;
     height: 2rem;
     display: flex;
