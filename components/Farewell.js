@@ -13,9 +13,9 @@ const FooterContainer = styled.div`
 
   .title {
     margin-top: 1rem;
-    font-family: "Corinthia", cursive;
     font-size: 4rem;
     font-weight: 100;
+    font-family: "Corinthia", cursive;
   }
 `;
 

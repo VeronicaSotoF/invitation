@@ -38,6 +38,12 @@ const BannerContainer = styled.div`
     margin-bottom: ${(props) => props.showParents && "4rem"};
   }
 
+  .banner-subtitle {
+    font-size: large;
+    margin-top: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+
   @keyframes AnimateBG {
     0% {
     }
@@ -75,7 +81,8 @@ const BannerContainer = styled.div`
     }
   }
   .parents-title {
-    font-size: small;
+    padding-top: 1.5rem;
+    padding-bottom: 0.8rem;
   }
 `;
 
@@ -99,12 +106,11 @@ const Banner = (props) => {
   return (
     <BannerContainer showParents={showParentsToggle}>
       <div className="banner-content">
-        <p className="banner-subtitle">{props.subtitle}</p>
         {showParentsToggle && (
           <>
-            <h3 className="parents-title">
-              Con la bendición de nuestros papás
-            </h3>
+            <span className="parents-title">
+              Con la bendición de nuestros padres
+            </span>
             <div className="parents-section">
               <div className="parents left">
                 <span>Soledad Fierro Quiñonez</span>
@@ -117,6 +123,7 @@ const Banner = (props) => {
             </div>
           </>
         )}
+        <p className="banner-subtitle">{props.subtitle}</p>
         <h1 className="banner-title">
           {groom}
           <Spacer height="0vh" />

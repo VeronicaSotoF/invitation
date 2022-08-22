@@ -32,12 +32,12 @@ export default function Home() {
         />
         <meta name="theme-color" content="#A78556" />
       </Head>
-      <Banner title={"Verónica y Guillermo"} subtitle="Nuestra Boda" />
+      <Banner title={"Verónica y Guillermo"} subtitle="NOS CASAMOS" />
       <Countdown />
       <InfoSection />
       <Regalos
         title="Regalos"
-        phrase="Tu presencia es nuestro mayor regalo, pero si quieres tener un detalle con nosotros, puedes visitar nuestra mesa de regalos."
+        phrase="Tu presencia es nuestro mayor regalo, pero si quieres tener un detalle con nosotros, puedes hacerlo el día de nuestra boda en los sobres que tendremos a tu disposición o visita nuestra mesa de regalos."
         url={mesaDeRegalosUrl}
       />
       <Footer />
