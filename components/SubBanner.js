@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
@@ -15,10 +15,10 @@ const SubBannerContainer = styled.div`
   border-radius: none !important;
   border-bottom: none !important;
   position: relative;
-
-  p {
+  transition: transform 0.8s ease-in-out p {
     margin-top: 1.5rem;
   }
+
   h2 {
     margin: 0;
     margin-bottom: 1rem;
@@ -32,16 +32,26 @@ const Circle = styled(motion.div)`
   border-radius: 50%;
   display: inline-block;
   top: -1.2rem;
+  transition: transform 0.3s ease-in-out;
+  p {
+    margin-top: 1.5rem;
+  }
+  transform: ${(props) =>
+    props.rotateIcon ? "rotate(0deg) !important" : "rotate(180deg) !important"};
 `;
 
 const SubBanner = (props) => {
   const [rotate, setRotate] = useState(false);
 
+  useEffect(() => {
+    setRotate(props.rotate);
+  }, [props.rotate]);
+
   return (
     <SubBannerContainer className="glass">
       <Circle
         showParents={props.showParents}
-        rotate={rotate}
+        rotateIcon={rotate}
         onClick={(e) => {
           props.showParents();
           e.preventDefault();

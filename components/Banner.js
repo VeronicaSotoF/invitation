@@ -154,9 +154,12 @@ const Banner = (props) => {
         date="25 Marzo 2023"
         phrase="Será un honor que seas parte de este momento tan especial."
         showParents={setShowparents}
+        rotate={showParentsToggle}
         showHideIcon={
           <Image
-            src={showParentsToggle ? upImg : downImg}
+            //src={showParentsToggle ? upImg : downImg}
+            src={upImg}
+            rotate={showParentsToggle}
             width={40}
             height={40}
           />
