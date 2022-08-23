@@ -27,11 +27,11 @@ const SubBannerContainer = styled.div`
 
 const Circle = styled(motion.div)`
   position: absolute;
-  height: 25px;
-  width: 25px;
+  height: 2.3rem;
+  width: 2.3rem;
   border-radius: 50%;
   display: inline-block;
-  top: -0.8rem;
+  top: -1.2rem;
 `;
 
 const SubBanner = (props) => {

@@ -22,6 +22,8 @@ const CountdownContainer = styled.div`
   }
   label {
     font-size: 0.9rem;
+    color: white;
+    text-shadow: 1px 1px black;
   }
   .date-element {
     margin: 2rem 0rem;

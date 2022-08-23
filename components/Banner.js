@@ -117,10 +117,10 @@ const Banner = (props) => {
         <AnimatePresence>
           {showParentsToggle && (
             <motion.div
-              initial={{ opacity: 0, y: -70 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -50 }}
-              whileTap={{ scale: 0.9 }}
+              initial={{ opacity: 0, y: -70, height: 0 }}
+              animate={{ opacity: 1, y: 0, height: 100 }}
+              exit={{ opacity: 0, y: -50, height: 0 }}
+              transition={{ duration: 0.6 }}
             >
               <span className="parents-title">
                 Con la bendición de nuestros padres
@@ -138,14 +138,16 @@ const Banner = (props) => {
             </motion.div>
           )}
         </AnimatePresence>
-        <p className="banner-subtitle">{props.subtitle}</p>
-        <h1 className="banner-title">
-          {groom}
-          <Spacer height="0vh" />
-          {"y"}
-          <Spacer height="8vh" />
-          {bride}
-        </h1>
+        <div style={{ display: "contents" }}>
+          <p className="banner-subtitle">{props.subtitle}</p>
+          <h1 className="banner-title">
+            {groom}
+            <Spacer height="0vh" />
+            {"y"}
+            <Spacer height="8vh" />
+            {bride}
+          </h1>
+        </div>
       </div>
       <SubBanner
         title="¡Estás Invitado!"
