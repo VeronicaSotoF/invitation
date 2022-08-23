@@ -4,7 +4,6 @@ import ContentCard from "./ContentCard";
 import locationChurch from "../public/locationChurch.jpg";
 import locationReception from "../public/locationReception.jpg";
 import externalLink from "../public/externalLink.png";
-import rings from "../public/rings.png";
 import glasses from "../public/glasses.png";
 import church from "../public/church.png";
 

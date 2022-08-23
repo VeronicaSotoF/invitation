@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import SubBanner from "./SubBanner";
-
+import downImg from "../public/down.png";
+import upImg from "../public/up.png";
+import Image from "next/image";
 import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
 
 const BannerContainer = styled.div`
   background: linear-gradient(
@@ -20,6 +23,7 @@ const BannerContainer = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 2rem;
   }
 
   .main-title {
@@ -59,7 +63,7 @@ const BannerContainer = styled.div`
   }
 
   .parents-section {
-    display: flex;
+    display: inline-flex;
     width: 100%;
     justify-content: space-evenly;
 
@@ -81,8 +85,12 @@ const BannerContainer = styled.div`
     }
   }
   .parents-title {
+    margin-top: 5rem;
     padding-top: 1.5rem;
     padding-bottom: 0.8rem;
+  }
+  .parents-expand-section {
+    display: contents;
   }
 `;
 
@@ -93,7 +101,7 @@ const Spacer = styled.span`
 `;
 
 const Banner = (props) => {
-  const [showParentsToggle, setShowParentsToggle] = useState(false);
+  const [showParentsToggle, setShowParentsToggle] = useState(true);
 
   const setShowparents = () => {
     setShowParentsToggle(!showParentsToggle);
@@ -106,23 +114,30 @@ const Banner = (props) => {
   return (
     <BannerContainer showParents={showParentsToggle}>
       <div className="banner-content">
-        {showParentsToggle && (
-          <>
-            <span className="parents-title">
-              Con la bendición de nuestros padres
-            </span>
-            <div className="parents-section">
-              <div className="parents left">
-                <span>Soledad Fierro Quiñonez</span>
-                <span>Mónico Soto Escobar</span>
+        <AnimatePresence>
+          {showParentsToggle && (
+            <motion.div
+              initial={{ opacity: 0, y: -70 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <span className="parents-title">
+                Con la bendición de nuestros padres
+              </span>
+              <div className="parents-section">
+                <div className="parents left">
+                  <span>Soledad Fierro Quiñonez</span>
+                  <span>Mónico Soto Escobar</span>
+                </div>
+                <div className="parents right">
+                  <span>Eulalia García Eguiarte</span>
+                  <span>Guillermo López Tsubuku</span>
+                </div>
               </div>
-              <div className="parents right">
-                <span>Eulalia García Eguiarte</span>
-                <span>Guillermo López Tsubuku</span>
-              </div>
-            </div>
-          </>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
         <p className="banner-subtitle">{props.subtitle}</p>
         <h1 className="banner-title">
           {groom}
@@ -137,6 +152,13 @@ const Banner = (props) => {
         date="25 Marzo 2023"
         phrase="Será un honor que seas parte de este momento tan especial."
         showParents={setShowparents}
+        showHideIcon={
+          showParentsToggle ? (
+            <Image src={downImg} width={35} height={35} />
+          ) : (
+            <Image src={upImg} width={35} height={35} />
+          )
+        }
       />
     </BannerContainer>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const SubBannerContainer = styled.div`
   min-height: 30vh;
@@ -24,20 +25,27 @@ const SubBannerContainer = styled.div`
   }
 `;
 
-const Circle = styled.span`
+const Circle = styled(motion.div)`
   position: absolute;
   height: 25px;
   width: 25px;
-  background-color: var(--accent-color);
   border-radius: 50%;
   display: inline-block;
   top: -0.8rem;
+
+  transform: ${(props) => (props.showParents ? "rotate(180deg)" : "none")};
 `;
 
 const SubBanner = (props) => {
   return (
     <SubBannerContainer className="glass">
-      <Circle onClick={(e) => props.showParents()} />
+      <Circle
+        showParents={props.showParents}
+        onClick={(e) => props.showParents()}
+        whileTap={{ scale: 0.9 }}
+      >
+        {props.showHideIcon}
+      </Circle>
       <h2>{props.title}</h2>
       <span>{props.date}</span>
       <p>{props.phrase}</p>
