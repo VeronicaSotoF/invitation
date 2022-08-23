@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
@@ -32,16 +32,20 @@ const Circle = styled(motion.div)`
   border-radius: 50%;
   display: inline-block;
   top: -0.8rem;
-
-  transform: ${(props) => (props.showParents ? "rotate(180deg)" : "none")};
 `;
 
 const SubBanner = (props) => {
+  const [rotate, setRotate] = useState(false);
+
   return (
     <SubBannerContainer className="glass">
       <Circle
         showParents={props.showParents}
-        onClick={(e) => props.showParents()}
+        rotate={rotate}
+        onClick={(e) => {
+          props.showParents();
+          e.preventDefault();
+        }}
         whileTap={{ scale: 0.9 }}
       >
         {props.showHideIcon}

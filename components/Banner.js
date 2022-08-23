@@ -153,11 +153,11 @@ const Banner = (props) => {
         phrase="Será un honor que seas parte de este momento tan especial."
         showParents={setShowparents}
         showHideIcon={
-          showParentsToggle ? (
-            <Image src={downImg} width={35} height={35} />
-          ) : (
-            <Image src={upImg} width={35} height={35} />
-          )
+          <Image
+            src={showParentsToggle ? upImg : downImg}
+            width={40}
+            height={40}
+          />
         }
       />
     </BannerContainer>
