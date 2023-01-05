@@ -38,6 +38,14 @@ const ContentCardContainer = styled.div`
     vertical-align: unset;
     transform: translate3d(3px, 2.4px, 10px);
   }
+
+  .place {
+    margin-bottom: 0;
+  }
+
+  .address {
+    margin-top: 0;
+  }
 `;
 
 const ContentCard = (props) => {
@@ -49,7 +57,10 @@ const ContentCard = (props) => {
         </div>
       )}
       <h3>{props.title}</h3>
-      <p>{props.paragraph}</p>
+      <div>
+        <p className="place">{props.place}</p>
+        <p className="address">{props.address}</p>
+      </div>
       <span>{props.time}</span>
       <div className="link-container">
         <span className="ubication-link">

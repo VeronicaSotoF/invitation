@@ -18,7 +18,8 @@ const InfoSection = () => {
         logo={church}
         linkImg={externalLink}
         title="CEREMONIA"
-        paragraph="Parroquia Señor de la Misericordia. Esmeralda s/n, Alamos Infonavit, 31024 Gómez Palacio, Dgo."
+        place="Parroquia Señor de la Misericordia."
+        address="Esmeralda s/n, Alamos Infonavit, 31024 Gómez Palacio, Dgo."
         time="19:00 hrs"
         link="https://goo.gl/maps/i8nEZrWExiNToGT68"
         mapImg={locationChurch}
@@ -27,7 +28,8 @@ const InfoSection = () => {
         logo={glasses}
         linkImg={externalLink}
         title="RECEPCIÓN"
-        paragraph="Quinta Villa Valentina. Calz. Fundadores s/n, Miravalle, 35015 Gómez Palacio, Dgo."
+        place="Quinta Villa Valentina."
+        address="Calz. Fundadores s/n, Miravalle, 35015 Gómez Palacio, Dgo."
         time="21:00 hrs"
         link="https://goo.gl/maps/nR6HAL6x3Ytw1wsUA"
         mapImg={locationReception}
